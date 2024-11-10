@@ -5,3 +5,11 @@ resource "null_resource" "get-caller-identity" {
   }
 }
 
+data "aws_vpc" "this" {
+  state = "available"
+}
+
+output "VPC_Details" {
+  value = data.aws_vpc.this
+}
+
