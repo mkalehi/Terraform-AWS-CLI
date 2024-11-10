@@ -14,7 +14,7 @@
 
 Please follow the [link](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) to install AWS CLI V2. Once setup is done, please follow the steps below for configuring AWS CLI to interact with an AWS Account. 
 
-(Optional) If you need better security, please use [aws-vault](https://github.com/99designs/aws-vault) instead
+Optionally, if you need better security, please use [aws-vault](https://github.com/99designs/aws-vault) instead. Please read [Use of AWS Vault (Optional)](#7-use-of-aws-vault-optional)
 
 1. Configure AWS Default Profile and Credentials
 
@@ -121,3 +121,6 @@ aws-vault exec <aws-role-profile> -- <command_or_script>
  
 
 
+
+
+[def]: https://
