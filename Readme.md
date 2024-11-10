@@ -8,6 +8,7 @@
 4. Setup Terraform
 5. Test AWS CLI
 6. Test Terraform Sample
+7. Use of AWS Vault (Optional)
 
 ## 1. Setup AWS CLI V2
 
@@ -77,7 +78,7 @@ Enter MFA code for arn:aws:iam::{{ DEVICE_ID }}:mfa/{{ AWS_LOGIN_ID }}: XXXXXXXX
 }
 ```
 
-## Test Terraform Sample
+## 6. Test Terraform Sample
 
 Run below set of commands
 
@@ -88,6 +89,28 @@ terraform fmt
 terraform validate
 terraform plan
 terraform apply
+```
+
+## 7. Use of AWS Vault (Optional)
+
+Install AWS Vault for Windows using the link below:
+
+https://github.com/99designs/aws-vault/releases/tag/v7.2.0
+
+Simply download the binary to `C:\aws-vault` folder and set the folder in user's `PATH` environment variable.
+
+How to use? Quite simple. Please perform the steps as below.
+
+```bash
+# Add credentials to aws-vault secrets engine
+aws-vault add <aws-user-profile>
+```
+```bash
+# Open subshell to assume a Role and run command inside the subshell
+aws-vault exec <aws-role-profile>
+
+# OR Execute command/script directly
+aws-vault exec <aws-role-profile> -- <command_or_script>
 ```
 
 ## Credits
